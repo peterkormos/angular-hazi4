@@ -1,0 +1,11 @@
+.normalRow {
+    background-color: lightgrey;
+}
+
+.highlightedRow {
+    background-color: darkgray;
+}
+
+.selectedRow {
+    background-color: lightblue;
+}
