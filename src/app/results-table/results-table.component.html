@@ -9,7 +9,7 @@
     <tr *ngFor="let result of results; let idx = index" (click)="rowSelected(idx)" [ngClass]="{
         normalRow: idx % 2 === 0,
         highlightedRow: idx % 2 === 1
-    }" [class.selectedRow]="idx === this.index">
+    }" [class.selectedRow]="idx === this.sharedData!.index">
         <td>{{result!.grandPrix}}</td>
         <td>{{result!.date | date : 'y. MMM. d.'}}</td>
         <td>{{result!.winner}}</td>

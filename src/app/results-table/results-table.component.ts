@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Result } from '../results';
+import { SharedData } from '../sharedData';
 
 @Component({
   selector: 'app-results-table',
@@ -8,8 +9,9 @@ import { Result } from '../results';
 })
 export class ResultsTableComponent implements OnInit {
   @Input() results : Result[] | undefined;
-  @Input() index : number | undefined;
+  @Input() sharedData : SharedData | undefined;
   @Output() indexChange = new EventEmitter<number>();
+  @Output() sharedDataChange = new EventEmitter<SharedData>();
 
   constructor() { }
 
@@ -18,7 +20,9 @@ export class ResultsTableComponent implements OnInit {
 
   rowSelected(index: number) 
   {
-    this.index = index;
+    this.sharedData!.index = index;
     this.indexChange.emit(index);
+
+    this.sharedDataChange.emit(this.sharedData);
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ressults } from './results';
+import { SharedData, SharedData_InvalidIndex } from './sharedData';
 
 @Component({
   selector: 'app-root',
@@ -8,18 +9,22 @@ import { ressults } from './results';
 })
 export class AppComponent {
   title = 'angular-hazi4';
-  index : number | undefined;
+  sharedData = new SharedData();
   podium: string[] | undefined;
 
   results = ressults;
 
   indexChanged(index : number) {
-    this.index = index;
+    this.sharedData.index = index;
     this.podium = ressults[index].podium;
   }
 
   hidePodium() {
-    this.index = undefined;
+    this.sharedData.index = SharedData_InvalidIndex;
     this.podium = undefined;
+  }
+
+  invalidIndex() {
+    return SharedData_InvalidIndex;
   }
 }
