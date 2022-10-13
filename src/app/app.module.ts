@@ -13,8 +13,7 @@ import { PodiumComponent } from './podium/podium.component';
     PodiumComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule
+    BrowserModule
   ],
   providers: [],
   bootstrap: [AppComponent]
