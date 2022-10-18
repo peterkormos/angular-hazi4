@@ -8,18 +8,22 @@ import { ressults } from './results';
 })
 export class AppComponent {
   title = 'angular-hazi4';
-  index : number | undefined;
+  _index : number | undefined;
   podium: string[] | undefined;
 
   results = ressults;
 
-  indexChanged(index : number) {
-    this.index = index;
+  get index() {
+    return this._index!;
+  }
+
+  set index(index : number) {
+    this._index = index;
     this.podium = ressults[index].podium;
   }
 
   hidePodium() {
-    this.index = undefined;
+    this._index = undefined;
     this.podium = undefined;
   }
 }

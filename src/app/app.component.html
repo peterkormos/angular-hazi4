@@ -3,5 +3,5 @@
 </div>
 <p>
 </p>
-<app-results-table [results]="results" [(index)]="index" (indexChange)="indexChanged($event)"></app-results-table>
+<app-results-table [results]="results" [(index)]="index" ></app-results-table>
 <app-podium *ngIf="index != undefined" [podium]="podium" (click)="hidePodium()"></app-podium>
